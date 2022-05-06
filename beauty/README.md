@@ -1,4 +1,4 @@
-## 项目地址
+## 美妆接口
 | 名称 | URI | 文档链接 |
 | :----- | :----| :----: |
 |新增动态| /app/beauty/topic_create.php |[doc](topic_create.md)|
