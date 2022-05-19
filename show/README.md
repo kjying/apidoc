@@ -3,7 +3,7 @@
 ### 现有接口改动
 1. [api:send_gift](/paycall/gifts.md) 增加show类型礼物
 2. api:paycall/call 返回内容增加字段showEnable(0|1), 标识对方是否可试用交互式表演功能.
-3. message:call 即content_type=4时 增加showEnable(0|1), 标识对方是否可试用交互式表演功能.
+3. api:paycall/answer 返回内容增加字段showEnable(0|1), 标识对方是否可试用交互式表演功能.
 
 #### 客户端检查本方是否可用交互式表演功能, 双方都可用时显示相关ui
 
@@ -22,9 +22,20 @@
 uid             | int    | 发送者uid
 receive_uid     | int    | 接受人uid
 ctime           | int    | utc秒
-chat_type       | int    | 51:anchor_invite; 52:user_invite; 53:anchor_accept; 54:user_accept; 55:anchor_reject; 56:user_reject
 gid             | int    | 表演礼物id
 show_id         | int    | 表演id
+chat_type       | int    | 见下面chat_type说明
+
+### chat_type
+message_type|value|desc
+---|---|---
+anchor_invite|51|主播邀请用户
+user_invite|52|用户邀请主播
+anchor_accept|53|主播同意表演
+user_accept|54|用户同意送礼观看表演
+anchor_reject|55|主播拒绝表演
+user_reject|56|用户拒绝送礼
+user_balance|57|用户金币不足
 
 
 ### 交互流程
@@ -38,7 +49,8 @@ sequenceDiagram
     girl->>server: api:anchor_invite
     server->>user: message:anchor_invite
     user->>server: api:send_gift
-    server->>girl: message:user_accept
+    server->>girl: 成功:message:user_accept
+    server-->>girl: 失败:message:user_balance
 ```
 
 
@@ -67,7 +79,8 @@ sequenceDiagram
     girl->>server: api:anchor_accept
     server->>user: message:anchor_accept
     user->>server: api:send_gift
-    server->>girl: message:user_accept
+    server->>girl: 成功:message:user_accept
+    server-->>girl: 失败:message:user_balance
 ```
 
 #### 4.用户发起 主播拒绝
