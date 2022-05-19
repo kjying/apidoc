@@ -1,14 +1,11 @@
 # 交互式表演服务端接口说明
 
-
 ### 现有接口改动
-1. api:send_gift
+1. [api:send_gift](/paycall/gifts.md) 增加show类型礼物
 2. api:paycall/call 返回内容增加字段showEnable(0|1), 标识对方是否可试用交互式表演功能.
 3. message:call 即content_type=4时 增加showEnable(0|1), 标识对方是否可试用交互式表演功能.
 
 #### 客户端检查本方是否可用交互式表演功能, 双方都可用时显示相关ui
-
-
 
 ### api
 | 名称 | URI | 文档链接 |
@@ -22,16 +19,17 @@
 ### message
 名称|格式|描述
 ---|---|---
-id              | int    | 评论id
-topic_id        | int    | 动态id
-uid             | int    | 发布人uid
-nickname        | string | 发布人昵称
-head_image      | string | 发布人头像
-content         | string | 内容
-t_create        | int    | 发布时间utc秒
+uid             | int    | 发送者uid
+receive_uid     | int    | 接受人uid
+ctime           | int    | utc秒
+chat_type       | int    | 51:anchor_invite; 52:user_invite; 53:anchor_accept; 54:user_accept; 55:anchor_reject; 56:user_reject
+gid             | int    | 表演礼物id
+show_id         | int    | 表演id
 
 
-### 主播发起 用户接受
+### 交互流程
+------
+#### 1.主播发起 用户接受
 ```mermaid
 sequenceDiagram
     participant girl
@@ -46,7 +44,7 @@ sequenceDiagram
 
 
 
-### 主播发起 用户拒绝
+#### 2.主播发起 用户拒绝
 ```mermaid
 sequenceDiagram
     participant girl
@@ -58,7 +56,7 @@ sequenceDiagram
     server->>girl: message:user_reject
 ```
 
-### 用户发起 主播接受
+#### 3.用户发起 主播接受
 ```mermaid
 sequenceDiagram
     participant girl
@@ -72,7 +70,7 @@ sequenceDiagram
     server->>girl: message:user_accept
 ```
 
-### 用户发起 主播拒绝
+#### 4.用户发起 主播拒绝
 ```mermaid
 sequenceDiagram
     participant girl
