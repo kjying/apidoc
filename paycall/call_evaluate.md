@@ -11,6 +11,7 @@ call_id|int|通话id|false|
 anchor_id|int|主播id|false|
 eId|string|多个评价用英文逗号分开，例如 1,2,3|true|
 type|int|0=>视频后评价主播 1=>新用户注册后选择的标签 |false|0
+show_rating|int|互动表演评分 无表演时传0;有表演时1-5|false|0
 
 注意：客户端必须防止用户重复点击，防止重复提交数据
 ##### HTTP Response

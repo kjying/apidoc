@@ -4,6 +4,7 @@
 1. [api:send_gift](/paycall/gifts.md) 增加show类型礼物
 2. api:paycall/call 返回内容增加字段showEnable(0|1), 标识对方是否可试用交互式表演功能.
 3. api:paycall/answer 返回内容增加字段showEnable(0|1), 标识对方是否可试用交互式表演功能.
+4. [api:call_evaluate](/paycall/call_evaluate.md) 增加show_rating参数(表演评分)
 
 #### 客户端检查本方是否可用交互式表演功能, 双方都可用时显示相关ui
 
