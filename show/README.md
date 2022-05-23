@@ -25,6 +25,9 @@ ctime           | int    | utc秒
 gid             | int    | 表演礼物id
 show_id         | int    | 表演id
 chat_type       | int    | 见下面chat_type说明
+content_type    | int    | 8 (本字段只是为了兼容其他代码避免报错)
+content         | string | 空字符串 (本字段只是为了兼容其他代码避免报错)
+gift_data       | object | 见下面gift_data说明
 
 ### chat_type
 message_type|value|desc
@@ -36,6 +39,18 @@ user_accept|54|用户同意送礼观看表演
 anchor_reject|55|主播拒绝表演
 user_reject|56|用户拒绝送礼
 user_balance|57|用户金币不足
+
+### gift_data
+名称|格式|描述
+---|---|---
+call_id         | int    | 通话id
+show_id         | int    | 表演id
+gid             | int    | 表演礼物id
+name            | string | 礼物名(表演名)
+img             | string | 图标url
+num             | int    | 数量 固定值1
+effect_url      | string | 特效url
+unit_profit     | int    | 主播收益 0 暂未计算
 
 
 ### 交互流程
@@ -94,3 +109,10 @@ sequenceDiagram
     girl->>server: api:anchor_reject
     server->>user: message:anchor_reject
 ```
+
+#### 数据库
+* show full columns from tb_show
+
+#### 管理后台
+1. 表演菜单点击统计  主播点击次数/用户点击次数, 即由主播/用户发起的次数 根据tb_show.inviter_type分别统计. 通话次数为tb_pay_call.show_enable=1的次数
+2. 主播表演次数流水统计 tb_show.finish_time>0为成功, 金币关联tb_gift表, 评价为tb_show.rating.
