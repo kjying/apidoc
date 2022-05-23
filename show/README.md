@@ -52,6 +52,7 @@ img             | string | 图标url
 num             | int    | 数量 固定值1
 effect_url      | string | 特效url
 unit_profit     | int    | 主播收益 0 暂未计算
+price           | int    | 金币价格
 
 
 ### 交互流程
