@@ -40,6 +40,7 @@ user_accept|54|用户同意送礼观看表演
 anchor_reject|55|主播拒绝表演
 user_reject|56|用户拒绝送礼
 user_balance|57|用户金币不足
+user_accept_self|58|用户送礼观看表演(自己邀请)
 
 ### gift_data
 名称|格式|描述
@@ -96,7 +97,7 @@ sequenceDiagram
     girl->>server: api:anchor_accept
     server->>user: message:anchor_accept
     user->>server: api:send_gift
-    server->>girl: 成功:message:user_accept
+    server->>girl: 成功:message:user_accept_self
     server-->>girl: 失败:message:user_balance
 ```
 
