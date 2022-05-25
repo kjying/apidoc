@@ -6,7 +6,7 @@
 #####  Parameters
 名称|格式|描述|必须|默认值
 ---|---|---|---|---
-sub_type|int|1财富榜，2明星榜，3人气榜，4女神榜，5男神榜 6 最能聊 7亲密榜 8守护榜|true|1
+sub_type|int|1财富榜，2明星榜，3人气榜，4女神榜，5男神榜 6 最能聊 7亲密榜 8守护榜 9表演榜|true|1
 user_id|int|主播id 当sub_type=7必须传|false|0
 
 ##### HTTP Response

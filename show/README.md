@@ -2,9 +2,10 @@
 
 ### 现有接口改动
 1. [api:gifts](/paycall/gifts.md) 增加show类型礼物
-2. api:paycall/call 返回内容增加字段showEnable(0|1), 标识对方是否可试用交互式表演功能.
-3. api:paycall/answer 返回内容增加字段showEnable(0|1), 标识对方是否可试用交互式表演功能.
+2. api:paycall/call 返回内容增加字段showEnable(0|1), 标识交互式表演功能入口是否开放.
+3. api:paycall/answer 返回内容增加字段showEnable(0|1), 标识交互式表演功能入口是否开放.
 4. [api:call_evaluate](/paycall/call_evaluate.md) 增加show_rating参数(表演评分)
+5. [api:ranking](/index/ranking.md) 增加sub_type=9为表演收入榜
 
 #### 客户端检查本方是否可用交互式表演功能, 双方都可用时显示相关ui
 
