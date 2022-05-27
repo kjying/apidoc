@@ -48,6 +48,17 @@
                     "special": "2"
                 },
             ],
+            "show_vip": [
+                {
+                    "effect_url": "http://wangsu.huataclub.com/gift/2021-09-06_1630907543.svga",
+                    "id": "26",
+                    "img": "http://wangsu.huataclub.com/gift/2021-09-06_1630907492.png",
+                    "name": "Your name is on my body",
+                    "position": "0",
+                    "price": "4999",
+                    "special": "2"
+                },
+            ],
          }
      }
 }
