@@ -29,6 +29,8 @@ topic_id    | int    | 动态id       | true |
 		'desc': 'desc-1646898758',
 		'count_comment': 1,
 		'count_praise': 0,
+		'price': 0,
+		'myPraise': 0,
 		't_create': 1646898758,
 		'nickname': 'pink pussy',
 		'head_image': 'http://wangsu.huataclub.com/headImg_2022-03-05_images_1764593_1646484629725.jpg',
@@ -57,7 +59,9 @@ topic_id    | int    | 动态id       | true |
 			'content': 'comment-1646898758',
 			't_create': 1646898759,
 			'reported': 0,
-			'uid': 1764593
+			'uid': 1764593,
+			'nickname': 'pink pussy',
+			'head_image': 'http://wangsu.huataclub.com/headImg_2022-03-05_images_1764593_1646484629725.jpg',
 		}]
 	},
 	'desc': ''

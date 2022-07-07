@@ -30,6 +30,7 @@ count    | int    | 数量       | false | 10
 		'desc': 'desc-1646898757',
 		'count_comment': '0',
 		'count_praise': 0,
+		'price': 0,
 		't_create': 1646898758,
 		'nickname': 'pink pussy',
 		'head_image': 'http://wangsu.huataclub.com/headImg_2022-03-05_images_1764593_1646484629725.jpg'

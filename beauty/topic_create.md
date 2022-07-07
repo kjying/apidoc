@@ -10,6 +10,7 @@
 pic_urls    | string    | 图片url 多个图片用;分隔     |true |
 title       | string    | 标题                      |true |
 desc        | string    | 描述                      |false |
+price        | int    | 价格                      |false |0
 
 ##### HTTP Response
 ```javascript
@@ -54,6 +55,7 @@ desc        | string    | 描述                      |false |
 			't_create': 1646900488
 		}],
 		'comments': []
+		'price': 0,
 	},
 	'desc': ''
 }
